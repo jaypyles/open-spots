@@ -36,7 +36,7 @@
 
 There are a few different variables that can be set in the `/frontend/.env` file to customize Open Spots.
 
--   `API_URL`: The URL of the API that will be used to fetch spot data. **Required**
+-   `API_URL`: The URL of the API (with the endpoint) that will be used to fetch spot data. **Required**
 -   `NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN`: The Mapbox access token to be used for the map. **Required**
 -   `NEXT_PUBLIC_MAPBOX_STYLE_URL`: The Mapbox style URL to be used for the map. **Required**
 -   `NEXT_PUBLIC_STARTING_CENTER_COORDS`: The starting center coordinates to be used for the map. 
@@ -71,4 +71,4 @@ The Open Spots API sends a POST (if the user has geolocation enabled) or GET req
 ## Local Setup
 
 1. Install Docker and Docker Compose.
-2. Run `make build up` to start the frontend and backend services.
+2. Run `make up` to start Open Spots.
