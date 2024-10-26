@@ -42,6 +42,8 @@ There are a few different variables that can be set in the `/frontend/.env` file
 -   `NEXT_PUBLIC_STARTING_CENTER_COORDS`: The starting center coordinates to be used for the map. 
 -   `NEXT_PUBLIC_STARTING_ZOOM`: The starting zoom level to be used for the map. 
 -   `NEXT_PUBLIC_STARTING_PITCH`: The starting pitch level to be used for the map.
+-   `NEXT_PUBLIC_SITE_TITLE`: The title of the site to be used in the header.
+-   `NEXT_PUBLIC_SITE_DESCRIPTION`: The description of the site to be used in the header.
 
 Your API should return a JSON object with the following fields:
 
