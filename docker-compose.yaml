@@ -1,0 +1,9 @@
+services:
+  frontend:
+    container_name: spots-frontend
+    restart: unless-stopped 
+    env_file: ./frontend/.env
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    command: npm run start

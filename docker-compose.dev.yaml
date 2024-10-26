@@ -1,0 +1,11 @@
+services:
+  frontend:
+    ports:
+      - 3001:3000
+    command: npm run dev
+    volumes:
+      - ./frontend/app:/app/app
+      - ./frontend/components:/app/components
+      - ./frontend/lib:/app/lib
+      - ./frontend/public:/app/public
+      - ./frontend/package.json:/app/package.json
