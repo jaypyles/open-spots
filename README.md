@@ -68,6 +68,11 @@ An example API response can be found in `docs/example_api_response.json`.
 
 The Open Spots API sends a POST (if the user has geolocation enabled) or GET request to the API URL set in the `/frontend/.env` file.
 
+The post request body is a JSON object with the following fields:
+
+-   `lat`: The latitude of the user's current location.
+-   `lng`: The longitude of the user's current location.
+
 ## Local Setup
 
 1. Install Docker and Docker Compose.
