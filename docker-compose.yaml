@@ -1,6 +1,6 @@
 services:
   frontend:
-    container_name: spots-frontend
+    container_name: open-spots
     restart: unless-stopped 
     env_file: ./frontend/.env
     build:
