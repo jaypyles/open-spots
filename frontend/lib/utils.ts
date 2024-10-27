@@ -24,3 +24,7 @@ export function formatTime(timeString: string) {
 export function roundDistanceToHundreds(distance: number) {
   return Math.round(distance * 100) / 100;
 }
+
+export const sliceString = (str: string, maxLength: number) => {
+  return str.length > maxLength ? str.slice(0, maxLength) + "..." : str;
+};

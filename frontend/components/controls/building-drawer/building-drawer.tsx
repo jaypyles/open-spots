@@ -5,7 +5,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { formatTime, roundDistanceToHundreds, type MapData } from "@/lib";
+import {
+  formatTime,
+  roundDistanceToHundreds,
+  sliceString,
+  type MapData,
+} from "@/lib";
 
 import { clsx } from "clsx";
 import classes from "./building-drawer.module.css";
@@ -84,9 +89,12 @@ export const BuildingDrawer = ({
                       className="flex justify-between py-4 text-lg font-[family-name:var(--font-geist-mono)] text-[16px]"
                     >
                       <div className="flex gap-4 items-center h-[fit-content]">
-                        <div className="w-18">
+                        <div className="w-18 max-md:text-sm">
                           <div>
-                            {building.building_code} {room.roomNumber}
+                            {sliceString(
+                              `${building.building_code} ${room.roomNumber}`,
+                              60
+                            )}
                           </div>
                         </div>
                         <div className="relative">
@@ -102,7 +110,7 @@ export const BuildingDrawer = ({
                       <ul className="text-right">
                         {room.slots && room.slots.length > 0 ? (
                           room.slots.map((slot, index) => (
-                            <li key={index}>
+                            <li key={index} className="max-md:text-sm">
                               {formatTime(slot.StartTime)} -{" "}
                               {formatTime(slot.EndTime)}
                             </li>

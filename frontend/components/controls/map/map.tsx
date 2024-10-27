@@ -88,6 +88,12 @@ export const Map = ({
       <div id="map-container" ref={mapContainerRef} className="opacity-100" />
       <div className="bg-[#18181b]/90 absolute bottom-10 left-2 sm:bottom-8 sm:left-0 flex flex-col gap-2 m-1 py-2.5 p-2 rounded-[16px]">
         <div className="flex items-center gap-0">
+          <div className="h-2 w-2 rounded-full bg-green-400 flex-none"></div>
+          <div className="ml-2 rounded-lg px-2 py-1 text-sm w-full bg-green-800/30 text-green-300/90">
+            open now
+          </div>
+        </div>
+        <div className="flex items-center gap-0">
           <div className="h-2 w-2 rounded-full bg-red-400 flex-none"></div>
           <div className="ml-2 rounded-lg px-2 py-1 text-sm w-full bg-red-700/30 text-red-300/90">
             unavailable
@@ -95,7 +101,7 @@ export const Map = ({
         </div>
         <div className="flex items-center gap-0">
           <div className="h-2 w-2 rounded-full bg-amber-400 flex-none"></div>
-          <div className="ml-2 rounded-lg px-2 py-1 text-sm w-full bg-amber-800/30 ttext-lime-400">
+          <div className="ml-2 rounded-lg px-2 py-1 text-sm w-full bg-amber-800/30 text-amber-300/90">
             opening soon
           </div>
         </div>
@@ -103,12 +109,6 @@ export const Map = ({
           <div className="h-2 w-2 rounded-full bg-amber-400 flex-none"></div>
           <div className="ml-2 rounded-lg px-2 py-1 text-sm w-full bg-amber-800/30 text-amber-300/90">
             closing soon
-          </div>
-        </div>
-        <div className="flex items-center gap-0">
-          <div className="h-2 w-2 rounded-full bg-green-400 flex-none"></div>
-          <div className="ml-2 rounded-lg px-2 py-1 text-sm w-full bg-green-800/30 text-green-300/90">
-            open now
           </div>
         </div>
       </div>
