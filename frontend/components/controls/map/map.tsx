@@ -29,7 +29,8 @@ export const Map = ({
   const [zoom, setZoom] = useState<number>(startingZoom);
   const [pitch, setPitch] = useState<number>(startingPitch);
   const mapboxToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
-  const MAPBOX_STYLE_URL = process.env.NEXT_PUBLIC_MAPBOX_STYLE_URL;
+  // const MAPBOX_STYLE_URL = process.env.NEXT_PUBLIC_MAPBOX_STYLE_URL;
+  const MAPBOX_STYLE_URL = "mapbox://styles/michaelgathara/cm2r2794200gj01phd50hflad";
 
   useEffect(() => {
     if (!mapboxToken) {
@@ -95,14 +96,14 @@ export const Map = ({
         </div>
         <div className="flex items-center gap-0">
           <div className="h-2 w-2 rounded-full bg-amber-400 flex-none"></div>
-          <div className="ml-2 rounded-lg px-2 py-1 text-sm w-full bg-amber-800/30 ttext-lime-400">
-            opening soon
+          <div className="ml-2 rounded-lg px-2 py-1 text-sm w-full bg-amber-800/30 text-amber-300/90">
+            closing soon
           </div>
         </div>
         <div className="flex items-center gap-0">
-          <div className="h-2 w-2 rounded-full bg-amber-400 flex-none"></div>
-          <div className="ml-2 rounded-lg px-2 py-1 text-sm w-full bg-amber-800/30 text-amber-300/90">
-            closing soon
+          <div className="h-2 w-2 rounded-full bg-lime-400 flex-none"></div>
+          <div className="ml-2 rounded-lg px-2 py-1 text-sm w-full bg-lime-800/30 text-lime-400">
+            opening soon
           </div>
         </div>
         <div className="flex items-center gap-0">

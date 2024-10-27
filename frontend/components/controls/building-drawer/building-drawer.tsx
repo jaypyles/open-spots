@@ -66,7 +66,7 @@ export const BuildingDrawer = ({
             <AccordionTrigger>
               <div className="flex justify-between w-[95%] text-left text-lg group items-center">
                 <div className="group-hover:underline underline-offset-8 pr-2">
-                  {building.building_code} - {building.building}
+                  {building.building}
                   <div className={classes.distance}>
                     {roundDistanceToHundreds(building.distance)}{" "}
                     {building.distance_unit}

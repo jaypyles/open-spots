@@ -2,8 +2,16 @@
   background-color: #34d399;
 }
 
+.opening-soon {
+  background-color:#34d39991;
+}
+
 .unavailable {
   background-color: #f87171;
+}
+
+.closing-soon {
+  background-color: #f8717191;
 }
 
 .upcoming {
