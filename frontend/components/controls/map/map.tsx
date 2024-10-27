@@ -95,8 +95,14 @@ export const Map = ({
         </div>
         <div className="flex items-center gap-0">
           <div className="h-2 w-2 rounded-full bg-amber-400 flex-none"></div>
-          <div className="ml-2 rounded-lg px-2 py-1 text-sm w-full bg-amber-800/30 text-amber-300/90">
+          <div className="ml-2 rounded-lg px-2 py-1 text-sm w-full bg-amber-800/30 ttext-lime-400">
             opening soon
+          </div>
+        </div>
+        <div className="flex items-center gap-0">
+          <div className="h-2 w-2 rounded-full bg-amber-400 flex-none"></div>
+          <div className="ml-2 rounded-lg px-2 py-1 text-sm w-full bg-amber-800/30 text-amber-300/90">
+            closing soon
           </div>
         </div>
         <div className="flex items-center gap-0">
