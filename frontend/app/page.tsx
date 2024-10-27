@@ -70,11 +70,11 @@ export default function OpenSpots() {
 
   return (
     <main className="flex flex-col sm:flex-row sm:gap-4 h-screen">
-      <div className="basis-2/5 sm:h-full order-last sm:order-first py-4 sm:px-0 sm:py-2 overflow-hidden sm:flex sm:flex-col">
-        <div className="w-full h-20 pl-8 pr-4 hidden sm:flex sm:justify-between items-center">
+      <div className="basis-2/5 sm:h-full order-last sm:order-first py-4 sm:px-0 sm:py-4 overflow-scroll sm:flex sm:flex-col">
+        <div className="w-full h-20 pl-8 pr-4 mb-4 hidden sm:flex sm:justify-between items-center">
           <Image src={"/logo.png"} width={200} height={200} alt="Logo" />
         </div>
-        <ScrollArea id="scroll-area" className="h-full">
+        <ScrollArea id="scroll-area" className="h-full mb-2">
           <div className="flex flex-col justify-between h-full">
             <div id="building-drawer-container">
               <div className="w-full h-20 pl-8 pr-4 flex sm:hidden justify-between items-center">
