@@ -1,8 +1,13 @@
+<p align="center">
+  <img src="https://github.com/jaypyles/open-spots/blob/master/frontend/public/logo.png?raw=true" alt="Open Spots Logo"/>
+</p>
+
+
 # Open Spots
 
-**Open Spots** is a fork of [Spots](https://github.com/notAkki/spots) that is designed to help organization deliver real-time building availability data to staff, employees, customers, or students. Developers can create an API to deliver their own data to the Open Spots platform. This data can be visualized on an interactive map, and displayed available spots (rooms with time slots).
+**Open Spots** is a fork of [Spots](https://github.com/notAkki/spots) that is designed to help organizations deliver real-time building availability data to staff, employees, customers, or students. Developers can create an API to deliver their own data to the Open Spots platform. This data can be visualized on an interactive map, and display available spots (rooms with time slots).
 
-![alt text](SpotsDemoImage.png)
+![alt text](/docs/spots.png)
 
 ## Features
 
@@ -29,14 +34,16 @@
 
 ## API
 
-There are a few different variables that can be set in the `.env` file to customize Open Spots.
+There are a few different variables that can be set in the `/frontend/.env` file to customize Open Spots.
 
--   `API_URL`: The URL of the API that will be used to fetch spot data. **Required**
+-   `API_URL`: The URL of the API (with the endpoint) that will be used to fetch spot data. **Required**
 -   `NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN`: The Mapbox access token to be used for the map. **Required**
 -   `NEXT_PUBLIC_MAPBOX_STYLE_URL`: The Mapbox style URL to be used for the map. **Required**
 -   `NEXT_PUBLIC_STARTING_CENTER_COORDS`: The starting center coordinates to be used for the map. 
 -   `NEXT_PUBLIC_STARTING_ZOOM`: The starting zoom level to be used for the map. 
 -   `NEXT_PUBLIC_STARTING_PITCH`: The starting pitch level to be used for the map.
+-   `NEXT_PUBLIC_SITE_TITLE`: The title of the site to be used in the header.
+-   `NEXT_PUBLIC_SITE_DESCRIPTION`: The description of the site to be used in the header.
 
 Your API should return a JSON object with the following fields:
 
@@ -59,9 +66,16 @@ The slots data has the following fields:
 -   `EndTime`: The end time of the time slot.
 -   `Status`: The status of the time slot.  
 
-An example API response can be found in `backend/docs/example_api_response.json`.
+An example API response can be found in `docs/example_api_response.json`.
+
+The Open Spots API sends a POST (if the user has geolocation enabled) or GET request to the API URL set in the `/frontend/.env` file.
+
+The post request body is a JSON object with the following fields:
+
+-   `lat`: The latitude of the user's current location.
+-   `lng`: The longitude of the user's current location.
 
 ## Local Setup
 
 1. Install Docker and Docker Compose.
-2. Run `make build up` to start the frontend and backend services.
+2. Run `make up` to start Open Spots.

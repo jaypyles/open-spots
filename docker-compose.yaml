@@ -1,9 +1,12 @@
 services:
   frontend:
-    container_name: spots-frontend
+    container_name: open-spots
     restart: unless-stopped 
     env_file: ./frontend/.env
+    image: jpyles0524/open-spots
     build:
       context: ./frontend
       dockerfile: Dockerfile
     command: npm run start
+    ports:
+      - 3000:3000

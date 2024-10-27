@@ -95,7 +95,7 @@ export default function OpenSpots() {
             height={20}
             alt="Github"
           />
-          <a href="https://github.com/jaypyles/spots">Github</a>
+          <a href="https://github.com/jaypyles/open-spots">Github</a>
         </div>
       </div>
       <div className="h-[60vh] basis-3/5 sm:h-screen">
