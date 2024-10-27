@@ -7,7 +7,8 @@
 
 **Open Spots** is a fork of [Spots](https://github.com/notAkki/spots) that is designed to help organizations deliver real-time building availability data to staff, employees, customers, or students. Developers can create an API to deliver their own data to the Open Spots platform. This data can be visualized on an interactive map, and display available spots (rooms with time slots).
 
-![alt text](/docs/spots.png)
+![Open Spots Side View](/docs/spots.png)
+![Open Spots Top Down View](/docs/topdown.png)
 
 ## Features
 
