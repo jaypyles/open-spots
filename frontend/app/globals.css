@@ -5,6 +5,7 @@
 :root {
   --background: #0a0a0f;
   --foreground: #f4f4f5;
+  --popup-background: #18181bbe;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,4 +38,10 @@ body {
   width: 100%;
   background-color: lightgrey;
   border-radius: 20px;
+}
+
+.marker-popup {
+  background-color: var(--popup-background);
+  border-radius: 10px;
+  padding: 0.25rem;
 }

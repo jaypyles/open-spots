@@ -62,9 +62,47 @@ export const Map = ({
       const buildingMarker = createMarkerFromMapData(data, handleMarkerClick);
 
       if (mapRef.current && data.coords) {
-        new mapboxgl.Marker(buildingMarker)
+        const marker = new mapboxgl.Marker(buildingMarker)
           .setLngLat([data.coords[0], data.coords[1]])
           .addTo(mapRef.current);
+
+        // Create a popup div for the building name
+        const popup = document.createElement("div");
+        popup.className = "marker-popup";
+        popup.innerText = data.building;
+
+        // Add hover effect for building markers
+        marker.getElement().addEventListener("mouseenter", () => {
+          marker.getElement().style.cursor = "pointer";
+          const markerElement = marker.getElement();
+          const markerRect = markerElement.getBoundingClientRect();
+          const mapContainerRect =
+            mapContainerRef.current?.getBoundingClientRect();
+
+          markerElement.style.cursor = "pointer";
+
+          if (mapContainerRect) {
+            popup.style.zIndex = "1000";
+            popup.style.left = `${
+              markerRect.left - mapContainerRect.left - 20
+            }px`;
+            popup.style.top = `${
+              markerRect.top - mapContainerRect.top - popup.offsetHeight - 30
+            }px`;
+          }
+          popup.style.display = "block";
+          popup.style.position = "absolute";
+          popup.style.zIndex = "1000";
+          mapContainerRef.current?.appendChild(popup);
+        });
+
+        marker.getElement().addEventListener("mouseleave", () => {
+          marker.getElement().style.cursor = "";
+          popup.style.display = "none";
+          if (popup.parentNode) {
+            popup.parentNode.removeChild(popup);
+          }
+        });
       }
     });
 
@@ -72,9 +110,16 @@ export const Map = ({
       const userMarker = document.createElement("div");
       userMarker.className =
         "h-3 w-3 border-[1.5px] border-zinc-50 rounded-full bg-blue-400 shadow-[0px_0px_4px_2px_rgba(14,165,233,1)]";
-      new mapboxgl.Marker(userMarker)
+      const userMarkerInstance = new mapboxgl.Marker(userMarker)
         .setLngLat([userPos[1], userPos[0]])
         .addTo(mapRef.current);
+
+      userMarkerInstance.getElement().addEventListener("mouseenter", () => {
+        userMarkerInstance.getElement().style.cursor = "pointer";
+      });
+      userMarkerInstance.getElement().addEventListener("mouseleave", () => {
+        userMarkerInstance.getElement().style.cursor = "";
+      });
     }
 
     return () => {
