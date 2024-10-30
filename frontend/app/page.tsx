@@ -5,10 +5,11 @@ import Image from "next/image";
 import { Map as MapComponent } from "@/components/controls/map/map";
 import { Loading } from "@/components/ui";
 import { BuildingDrawer } from "@/components/controls";
-import { type MapData } from "@/lib";
+import { APIResponse, type MapData } from "@/lib";
 import { mapDataService } from "@/lib/services";
 
 export default function OpenSpots() {
+  const [logo, setLogo] = useState<string | null>(null);
   const [data, setData] = useState<MapData[]>([]);
   const [activeBuilding, setActiveBuilding] = useState<string | null>(null);
   const [userPos, setUserPos] = useState<[number, number] | null>(null);
@@ -39,24 +40,29 @@ export default function OpenSpots() {
             const { latitude, longitude } = position.coords;
             setUserPos([latitude, longitude]);
 
-            const data = await mapDataService.sendUserLocation(
+            const data: APIResponse = await mapDataService.sendUserLocation(
               latitude,
               longitude
             );
-            setData(data);
+            setData(data.data);
+            setLogo(data.logo || null);
             setLoading(false);
           },
           async (error) => {
             console.error("Error fetching location here:", error);
-            const defaultData = await mapDataService.sendDefaultLocationData();
-            setData(defaultData);
+            const defaultData: APIResponse =
+              await mapDataService.sendDefaultLocationData();
+            setData(defaultData.data);
+            setLogo(defaultData.logo || null);
             setLoading(false);
           }
         );
       } else {
         console.error("Geolocation is not supported by this browser.");
-        const defaultData = await mapDataService.sendDefaultLocationData();
-        setData(defaultData);
+        const defaultData: APIResponse =
+          await mapDataService.sendDefaultLocationData();
+        setData(defaultData.data);
+        setLogo(defaultData.logo || null);
         setLoading(false);
       }
     };
@@ -73,6 +79,7 @@ export default function OpenSpots() {
       <div className="basis-2/5 sm:h-full order-last sm:order-first py-4 sm:px-0 sm:py-4 overflow-hidden sm:flex sm:flex-col">
         <div className="w-full h-20 pl-8 pr-4 mb-4 hidden sm:flex sm:justify-between items-center">
           <Image src={"/logo.png"} width={200} height={200} alt="Logo" />
+          {logo && <img className="w-20" src={logo} alt="Logo" />}
         </div>
         <ScrollArea id="scroll-area" className="h-full mb-2">
           <div className="flex flex-col justify-between h-full">

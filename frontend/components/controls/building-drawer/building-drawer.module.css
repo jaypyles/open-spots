@@ -3,7 +3,7 @@
 }
 
 .opening-soon {
-  background-color:#34d39991;
+  background-color: #34d39991;
 }
 
 .unavailable {
@@ -36,4 +36,16 @@
 .distance {
   font-size: 0.825rem;
   color: lightgray;
+}
+
+.tags {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tag {
+  padding: 0.25rem;
+  line-height: 1;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
 }

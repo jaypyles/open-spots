@@ -1,3 +1,8 @@
+export type APIResponse = {
+  data: MapData[];
+  logo?: string;
+};
+
 export type MapData = {
   building: string;
   building_code: string;
@@ -6,6 +11,13 @@ export type MapData = {
   coords: [number, number];
   distance: number;
   distance_unit: string;
+  labels?: Label[];
+  logo?: string;
+};
+
+export type Label = {
+  label: string;
+  color?: string;
 };
 
 export type Slot = {

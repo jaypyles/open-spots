@@ -1,22 +1,31 @@
-[
-  {
-    "building": "Your Building Name",
-    "building_code": "Your Building Code",
-    "building_status": "available",
-    "coords": [0, 0],
-    "distance": 0,
-    "distance_unit": "mi",
-    "rooms": [
-      {
-        "roomNumber": "Your Room Number",
-        "slots": [
-          {
-            "EndTime": "Your End Time",
-            "StartTime": "Your Start Time",
-            "Status": "Your Status"
-          }
-        ]
-      }
-    ]
-  }
-]
+{
+  "logo": "**Optional** Your Logo URL",
+  "data": [
+    {
+      "building": "Your Building Name",
+      "building_code": "Your Building Code",
+      "building_status": "available",
+      "coords": [0, 0],
+      "distance": 0,
+      "distance_unit": "mi",
+      "labels": [
+        {
+          "label": "Your Label",
+          "color": "**Optional** Your Color (HEX VALUE)"
+        }
+      ],
+      "rooms": [
+        {
+          "roomNumber": "Your Room Number",
+          "slots": [
+            {
+              "EndTime": "Your End Time",
+              "StartTime": "Your Start Time",
+              "Status": "Your Status"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

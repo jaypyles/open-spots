@@ -48,6 +48,11 @@ There are a few different variables that can be set in the `/frontend/.env` file
 
 Your API should return a JSON object with the following fields:
 
+-   `logo`: The URL of the logo to be used in the header. **Optional**
+-   `data`: An array of building data.
+
+The building data has the following fields:
+
 -   `building`: The name of the building.
 -   `building_code`: The code of the building.
 -   `building_status`: The status of the building.

@@ -11,7 +11,6 @@ import {
   sliceString,
   type MapData,
 } from "@/lib";
-
 import { clsx } from "clsx";
 import classes from "./building-drawer.module.css";
 
@@ -52,6 +51,18 @@ export const BuildingDrawer = ({
   activeBuilding,
   setActiveBuilding,
 }: BuildingDrawerProps) => {
+  const getBuildingType = (building: MapData) => {
+    if (!building.labels) {
+      return null;
+    }
+
+    return building.labels.map((label) => (
+      <div className={classes.tag} style={{ backgroundColor: label.color }}>
+        {label.label}
+      </div>
+    ));
+  };
+
   return (
     <div className="px-8">
       <Accordion
@@ -70,8 +81,15 @@ export const BuildingDrawer = ({
           >
             <AccordionTrigger>
               <div className="flex justify-between w-[95%] text-left text-lg group items-center">
-                <div className="group-hover:underline underline-offset-8 pr-2">
-                  {building.building}
+                <div className="pr-2">
+                  <div className="flex items-center gap-2">
+                    <div className="group-hover:underline underline-offset-8">
+                      {building.building}
+                    </div>
+                    <div className={classes.tags}>
+                      {getBuildingType(building)}
+                    </div>
+                  </div>
                   <div className={classes.distance}>
                     {roundDistanceToHundreds(building.distance)}{" "}
                     {building.distance_unit}
