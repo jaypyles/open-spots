@@ -79,7 +79,7 @@ export default function OpenSpots() {
       <div className="basis-2/5 sm:h-full order-last sm:order-first py-4 sm:px-0 sm:py-4 overflow-hidden sm:flex sm:flex-col">
         <div className="w-full h-20 pl-8 pr-4 mb-4 hidden sm:flex sm:justify-between items-center">
           <Image src={"/logo.png"} width={200} height={200} alt="Logo" />
-          {logo && <img className="w-20" src={logo} alt="Logo" />}
+          {logo && <img className="w-20" src={logo} alt="Logo" key="image" />}
         </div>
         <ScrollArea id="scroll-area" className="h-full mb-2">
           <div className="flex flex-col justify-between h-full">

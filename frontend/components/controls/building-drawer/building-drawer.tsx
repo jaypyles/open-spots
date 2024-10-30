@@ -57,7 +57,11 @@ export const BuildingDrawer = ({
     }
 
     return building.labels.map((label) => (
-      <div className={classes.tag} style={{ backgroundColor: label.color }}>
+      <div
+        className={classes.tag}
+        style={{ backgroundColor: label.color }}
+        key={label.label}
+      >
         {label.label}
       </div>
     ));
